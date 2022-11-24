@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="SampleProject.User.UserMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="../Guest/css/mystyle.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body style="background-color:#d5f4e6;">
+
+    <nav class="nav" style="background-color: darkblue; width: 100%; top: 0; position: fixed;">
+        <ul>
+            <li><a href="userlogin.aspx">Home</a></li>
+            
+            <li><a href="../Guest/Firstform.aspx">Logout</a></li>
+
+        </ul>
+    </nav>
+
+    <div>
+        <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div class="footer" style="background-color: darkblue; width: 100%; bottom: 0; position: fixed; height: 30px;">
+    </div>
+
+</body>
+</html>
