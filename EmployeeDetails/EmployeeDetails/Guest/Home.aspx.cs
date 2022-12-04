@@ -13,8 +13,11 @@ namespace EmployeeDetails
         BAL.EmpBAL objdptbl = new BAL.EmpBAL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = objdptbl.viewEmployees();
-            GridView1.DataBind();
+            if (!IsPostBack)
+            {
+                GridView1.DataSource = objdptbl.viewEmployees();
+                GridView1.DataBind();
+            }
 
         }
 
@@ -81,7 +84,6 @@ namespace EmployeeDetails
             TextBox phn = new TextBox();
             phn = (TextBox)GridView1.Rows[e.RowIndex].Cells[2].Controls[0];
             objdptbl.empphn = phn.Text;
-
             TextBox age = new TextBox();
             age = (TextBox)GridView1.Rows[e.RowIndex].Cells[3].Controls[0];
             objdptbl.empage = Convert.ToInt32(age.Text);
